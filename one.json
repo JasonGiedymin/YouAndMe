@@ -1,0 +1,13 @@
+{
+    "data": "some data 1",
+    "nestedData": {
+        "name": "foo1",
+        "name2": {
+            "nestedData2": {
+                "item": "one",
+                "count": 2
+            },
+            "someVal": true
+        }
+    }
+}
