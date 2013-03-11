@@ -27,7 +27,7 @@ Object.prototype.equals = function(x, tree){
                 if (typeof(x[p]) != 'undefined') compInfo(p+" as Undefined", this[p], x[p]);
                 break;
             case 'object':
-                if(this[p]!==null && x[p]!==null &&
+                if(this[p]!==null && (x[p]!==null || x[p]!==undefined) && (x[p].constructor !== undefined) &&
                     (this[p].constructor.toString() !== x[p].constructor.toString() ||
                         !this[p].equals(x[p], prev))) {
                     compInfo(p+" as Obj", this[p], x[p]);
@@ -47,3 +47,4 @@ Object.prototype.equals = function(x, tree){
 console.log('Started');
 
 one.equals(two);
+//two.equals(one);
